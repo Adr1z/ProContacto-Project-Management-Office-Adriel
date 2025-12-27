@@ -1,6 +1,6 @@
 # ProContacto-Salesforce-Developer-Adriel
 
-## Ejercicio 1: Instalación del Ambiente
+## EJERCICIO 1: Instalación del Ambiente
 Para el desarrollo de esta evaluación técnica, se ha configurado el siguiente entorno de trabajo:  
 
 **IDE:** Visual Studio Code.  
@@ -200,3 +200,131 @@ PublishStatus
 
 **Diagrama UML:**  
 <img width="2516" height="4356" alt="image" src="https://github.com/user-attachments/assets/781571c9-5161-4610-af90-55f1fb4a05f5" />  
+
+## EJERCICIO 6: 
+
+**Soluciones de Salesforce**  
+
+A. ¿Qué es Salesforce?  
+Es una plataforma CRM en la nube para gestionar ventas, servicios, marketing y relaciones con clientes.  
+
+B. ¿Qué es Sales Cloud?  
+Es un software que automatiza el ciclo de ventas para ayudar a las empresas a vender de forma más rápida y eficiente, proporcionándoles una plataforma integrada con todo lo que necesitan.  
+
+C. ¿Qué es Service Cloud?  
+Es una plataforma de atención al cliente diseñada para ayudar a las empresas a gestionar y resolver las consultas y problemas de sus clientes de forma eficiente.  
+
+Ofrece herramientas para la gestión de casos, bases de conocimiento, soporte omnicanal, automatización y análisis.  
+
+D. ¿Qué es Health Cloud?  
+Es una plataforma CRM en la nube para el sector salud que unifica datos clínicos y no clínicos, creando una vista centralizada del paciente para una atención personalizada y eficiente; permitiendo la coordinación entre equipos, automatizando procesos e integrando historiales, dispositivos y sistemas en un lugar.  
+
+E. ¿Qué es Marketing Cloud?  
+Es la solución para automatización de marketing, campañas multicanal y personalización de comunicaciones.  
+
+---
+
+**Funcionalidades de Salesforce**  
+
+A. ¿Qué es un Record Type?  
+Es una función de Salesforce que permite agrupar registros similares dentro de un objeto y personalizarlos según las necesidades específicas.  
+
+B. ¿Qué es un Report Type?  
+Es una plantilla que define qué objetos, campos y relaciones estarán disponibles al crear un reporte.  
+
+C. ¿Qué es un Page Layout?  
+Es una herramienta que controla qué campos, botones y secciones ve el usuario en un registro.  
+
+D. ¿Qué es un Compact Layout?  
+Es una configuración que define los campos clave que se muestran en el encabezado de un registro (highlights) y en la vista resumida de la aplicación móvil.  
+
+E. ¿Qué es un Perfil?  
+Es una plantilla que define el nivel base de acceso y permisos de un usuario, determinando qué puede ver (objetos, campos) y qué puede hacer (crear, leer, editar, eliminar - CRED) dentro de la plataforma.  
+
+F. ¿Qué es un Rol?  
+Es una herramienta que define la jerarquía de visibilidad de datos dentro de la organización.  
+
+G. ¿Qué es un Validation Rule?  
+Es una regla que impide guardar datos inválidos según una condición.  
+
+H. Diferencia entre Master-Detail y Lookup  
+
+Master-Detail: Dependencia total; el hijo hereda seguridad del padre y se borra en cascada si el padre desaparece.  
+
+Lookup: Relación flexible y opcional; el registro hijo puede existir de forma independiente.  
+
+I. ¿Qué es un Sandbox?  
+Es un entorno de prueba separado del entorno de producción.  
+
+J. ¿Qué es un Change Set?  
+Es una herramienta para migrar configuraciones entre entornos Salesforce.  
+
+K. ¿Para qué sirve el Import Wizard?  
+Para importar datos masivos fácilmente desde archivos externos a objetos.  
+
+L. ¿Para qué sirve Web to Lead?  
+Sirve para capturar automáticamente la información de visitantes de tu sitio web y crear registros de prospectos (leads) en tu CRM sin intervención manual.  
+
+M. ¿Para qué sirve Web to Case?  
+Sirve para capturar automáticamente solicitudes de soporte al cliente directamente desde tu sitio web, creando registros de Casos en Salesforce sin intervención manual.  
+
+N. ¿Para qué sirve Omnichannel?  
+Para distribuir casos/chats/tareas entre agentes según reglas y disponibilidad.  
+
+O. ¿Para qué sirve Chatter?  
+Para colaboración interna, comentarios, menciones y seguimiento de registros.  
+
+---
+
+**Conceptos Generales**  
+
+A. ¿Qué significa SaaS?  
+Software as a Service: software accesible vía internet, sin instalación local.  
+
+B. ¿Salesforce es SaaS?  
+Sí, Salesforce es una plataforma SaaS.  
+
+C. ¿Qué significa que una solución sea Cloud?  
+Que se ejecuta en servidores remotos accesibles por internet.  
+
+D. ¿Qué significa On-Premise?  
+Que el software se instala y ejecuta localmente en servidores propios.  
+
+E. ¿Qué es un pipeline de ventas?  
+Es el conjunto de oportunidades activas y su estado en el proceso comercial.  
+
+F. ¿Qué es un funnel de ventas?  
+Es la representación del proceso de conversión, desde prospectos hasta clientes.  
+
+G. ¿Qué significa Customer Experience?  
+Es la experiencia total del cliente en todas sus interacciones con la empresa.  
+
+H. ¿Qué significa omnicanalidad?  
+Integrar todos los canales de atención (web, chat, mail, teléfono) de forma unificada.  
+
+I. ¿Qué significa que un negocio sea B2B?¿Qué significa que un negocio sea B2C? ¿Qué es un KPI?  
+
+B2B: Bussiness to Bussiness (negocio entre empresas).  
+
+B2C: Bussiness to Client (negocio empresa → consumidor final).  
+
+KPI: Key peformance indicator (indicador clave para medir rendimiento).  
+
+J. ¿Qué es una API y diferencia con REST API?  
+
+API: interfaz para comunicación entre sistemas.  
+
+REST API: API que usa HTTP y principios REST.  
+
+K. ¿Qué es un Proceso Batch?  
+Proceso que ejecuta grandes volúmenes de datos de forma asincrónica.  
+
+L. ¿Qué es Kanban?  
+Método visual para gestionar tareas por estados.  
+
+M. ¿Qué es un ERP?  
+Sistema que integra finanzas, logística, compras, RRHH, etc.  
+
+N. ¿Salesforce es un ERP?  
+No. Salesforce es un CRM, aunque puede integrarse con ERPs.  
+
