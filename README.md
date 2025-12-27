@@ -48,7 +48,7 @@ Es un código numérico de tres dígitos que el servidor envía en la respuesta 
 * **POST:** Los datos se envían en el **cuerpo (body)** de la petición. No son visibles en la URL, no tienen límite de tamaño estricto y son más seguros para enviar información confidencial.
 
 **7. ¿Qué verbo http utiliza el navegador cuando accedemos a una página?**  
-Utiliza el verbo **GET**. Al escribir una dirección en la barra y presionar Enter, el navegador solicita "traer" ese recurso.
+Utiliza el verbo **GET**.
 
 **8. Explicar brevemente qué son las estructuras de datos JSON y XML dando ejemplo de estructuras posibles.**  
 Son formatos de texto para el intercambio de datos.
@@ -70,10 +70,11 @@ Son formatos de texto para el intercambio de datos.
     ```
 
 **9. Explicar brevemente el estándar SOAP**  
-**SOAP (Simple Object Access Protocol)** es un protocolo estándar basado estrictamente en XML para intercambiar información estructurada. Es conocido por su robustez, seguridad (WS-Security) y transaccionalidad (ACID), pero es más pesado y complejo de implementar que REST. Utiliza un archivo WSDL para definir la estructura del servicio.
+**SOAP (Simple Object Access Protocol)** es un protocolo estándar basado en XML para intercambiar información estructurada. Es conocido por su robustez, seguridad (WS-Security) y transaccionalidad (ACID), pero es más pesado y complejo de implementar que REST. Utiliza un archivo WSDL para definir la estructura del servicio.
 
 **10. Explicar brevemente el estándar RESTful**  
-**REST (Representational State Transfer)** no es un protocolo, sino un estilo arquitectónico. Un servicio RESTful utiliza los verbos HTTP estándar (GET, POST, PUT, DELETE) para manipular recursos identificados por URLs. Es "stateless" (sin estado), suele usar JSON como formato de transporte y es más ligero y flexible que SOAP.  
+**REST (Representational State Transfer)** es un estilo de arquitectura para sistemas distribuidos en red, que define restricciones para la comunicación cliente-servidor.  
+**RESTFul** es un servicio que implementa los principios de la arquitectura **REST**, usando HTTP para interactuar con recursos (datos) identificados por URLs.
 
 **11. ¿Qué son los headers en un request? ¿Para qué se utiliza el key Content-type en un header?**  
 Son los metadatos que el cliente envía al servidor para darle contexto sobre la petición (quién la envía, qué acepta recibir, credenciales, etc.).
@@ -85,4 +86,117 @@ El key **Content-Type** es fundamental porque indica al servidor qué tipo de fo
 https://www.salesforce.com/trailblazer/syl2zip2b0pbmidcc8
 
 ## EJERCICIO 5:
+**1. Lead (Candidato)**
+<ins>Concepto</ins>:  
+Un Lead representa un prospecto no calificado: alguien que mostró interés pero todavía no se sabe si será cliente. El objetivo de este objeto es convertirse en una Account, Contacto u Opportunity.  
 
+<ins>Datos Estándar (Campos)</ins>:  
+FirstName, LastName  
+Company   
+Status  
+LeadSource   
+Rating  
+Email, Phone  
+
+**2. Account (Cuenta)**
+<ins>Concepto</ins>:  
+Una Account representa una empresa o cliente.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+Name  
+AccountNumbe  
+Type  
+Industry  
+BillingAddress, ShippingAddress  
+AnnualRevenue  
+
+**3. Contact (Contacto)**  
+<ins>Concepto</ins>:  
+Representa a una persona física asociada o que trabaja para una Account.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+AccountId  
+FirstName, LastName  
+Email, Phone, MobilePhone  
+Title  
+Department  
+
+**4. Opportunity (Oportunidad)**  
+<ins>Concepto</ins>:  
+Representa una venta potencial en progreso.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+Name   
+AccountId  
+StageName  
+CloseDate  
+Amount   
+Probability  
+
+**5. Product**  
+<ins>Concepto</ins>:  
+Un Product es un bien o servicio que la empresa vende.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+Name
+ProductCode  
+IsActive  
+Family  
+Description
+
+**6. PriceBook**  
+<ins>Concepto</ins>:  
+Un PriceBook define una lista de precios para productos.   
+
+<ins>Datos Estándar (Campos)</ins>:   
+Name  
+IsActive  
+IsStandard  
+
+**7. Quote (Presupuesto)**  
+<ins>Concepto</ins>:  
+Una Quote es un presupuesto enviado a un cliente.  
+
+<ins>Datos Estándar (Campos)</ins>:   
+OpportunityId  
+QuoteNumber  
+Status  
+ExpirationDate  
+Subtotal, GrandTotal  
+
+**8. Asset (Activo)**  
+<ins>Concepto</ins>:  
+Representa un producto específico que un cliente ya ha comprado y posee.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+AccountId  
+ProductId  
+SerialNumber  
+InstallDate, PurchaseDate  
+Status  
+
+**9. Case (Caso)**  
+<ins>Concepto</ins>:  
+Un Case es un ticket de soporte o atención al cliente.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+CaseNumber  
+Subject, Description  
+Status  
+Priority  
+Origin  
+AccountId, ContactId  
+
+**10. Article (Artículo / Knowledge)**  
+<ins>Concepto</ins>:  
+Documentos de conocimiento (FAQs, manuales) que ayudan a los agentes a resolver Casos o a los clientes a auto-servirse.  
+
+<ins>Datos Estándar (Campos)</ins>:  
+Title  
+UrlName  
+Summary  
+ValidationStatus  
+PublishStatus   
+
+**Diagrama UML:**  
+<img width="2516" height="4356" alt="image" src="https://github.com/user-attachments/assets/781571c9-5161-4610-af90-55f1fb4a05f5" />  
