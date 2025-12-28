@@ -86,11 +86,11 @@ El key **Content-Type** es fundamental porque indica al servidor qué tipo de fo
 https://www.salesforce.com/trailblazer/syl2zip2b0pbmidcc8
 
 ## EJERCICIO 5:
-**1. Lead (Candidato)**
+**1. Lead (Candidato)**  
 <ins>Concepto</ins>:  
 Un Lead representa un prospecto no calificado: alguien que mostró interés pero todavía no se sabe si será cliente. El objetivo de este objeto es convertirse en una Account, Contacto u Opportunity.  
 
-<ins>Datos Estándar (Campos)</ins>:  
+<ins>Datos Estándar (Campos)</ins>:    
 FirstName, LastName  
 Company   
 Status  
@@ -98,7 +98,7 @@ LeadSource
 Rating  
 Email, Phone  
 
-**2. Account (Cuenta)**
+**2. Account (Cuenta)**  
 <ins>Concepto</ins>:  
 Una Account representa una empresa o cliente.  
 
