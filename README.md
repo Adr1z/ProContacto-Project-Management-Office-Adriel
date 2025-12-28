@@ -52,7 +52,7 @@ Utiliza el verbo **GET**.
 
 **8. Explicar brevemente qué son las estructuras de datos JSON y XML dando ejemplo de estructuras posibles.**  
 Son formatos de texto para el intercambio de datos.
-* **JSON (JavaScript Object Notation):** Es ligero y basado en pares clave-valor. Es el estándar más usado en APIs REST modernas.
+* **JSON (JavaScript Object Notation):** Es ligero y basado en pares clave-valor.
     ```json
     {
       "nombre": "Juan",
@@ -60,7 +60,7 @@ Son formatos de texto para el intercambio de datos.
       "activo": true
     }
     ```
-* **XML (eXtensible Markup Language):** Es un lenguaje de marcado basado en etiquetas. Es más verborrágico y estricto.
+* **XML (eXtensible Markup Language):** Es un lenguaje de marcado basado en etiquetas.
     ```xml
     <usuario>
       <nombre>Juan</nombre>
