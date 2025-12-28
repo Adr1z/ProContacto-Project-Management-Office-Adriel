@@ -328,3 +328,70 @@ Sistema que integra finanzas, logística, compras, RRHH, etc.
 N. ¿Salesforce es un ERP?  
 No. Salesforce es un CRM, aunque puede integrarse con ERPs.  
 
+##EJERCICIO 7:
+**A.** Consultar tu ID haciendo un GET con POSTMAN a este WS:  
+https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts.json  
+
+<img width="760" height="398" alt="image" src="https://github.com/user-attachments/assets/d63d6ade-ebb9-4931-81b3-f5a3088ea73e" />  
+
+**B.** Agregar un campo al objeto Contact llamado idprocontacto de tipo texto de 255 caracteres.
+<img width="1877" height="452" alt="image" src="https://github.com/user-attachments/assets/a5eec156-3a3d-40f0-97a0-f6dddc65f045" />  
+
+**C.**  
+```apex
+trigger ContactTrigger on Contact (after insert, after update) {
+
+    Set<Id> contactIds = new Set<Id>();
+
+    for (Contact con : Trigger.new) {
+        if (con.idprocontacto__c != null) {
+            contactIds.add(con.Id);
+        }
+    }
+
+    if (!contactIds.isEmpty()) {
+        ContactIntegrationHandler.processContacts(contactIds);
+    }
+}
+```
+```apex
+public class ContactIntegrationHandler {
+
+    @future(callout=true)
+    public static void processContacts(Set<Id> contactIds) {
+
+        List<Contact> contactsToUpdate = new List<Contact>();
+
+        for (Contact iteratedContact : [
+            SELECT Id, idprocontacto__c
+            FROM Contact
+            WHERE Id IN :contactIds
+        ]) {
+
+            Http http = new Http();
+            HttpRequest request = new HttpRequest();
+            request.setEndpoint(
+                'https://procontacto-reclutamiento-default-rtdb.firebaseio.com/contacts/' +
+                iteratedContact.idprocontacto__c + '.json'
+            );
+            request.setMethod('GET');
+
+            HttpResponse response = http.send(request);
+
+            if (response.getStatusCode() == 200) {
+                Map<String, Object> results =
+                    (Map<String, Object>) JSON.deserializeUntyped(response.getBody());
+
+                if (results.containsKey('email')) {
+                    iteratedContact.Email = (String) results.get('email');
+                    contactsToUpdate.add(iteratedContact);
+                }
+            }
+        }
+
+        if (!contactsToUpdate.isEmpty()) {
+            update contactsToUpdate;
+        }
+    }
+}
+```
